@@ -1,4 +1,4 @@
-# Medical Conversation Analysis App
+# Adverse Medical Event Prediction
 
 This application analyzes audio-based medical conversations between patients and healthcare professionals. Using powerful AI models, it transcribes conversations, extracts critical medical insights, and predicts possible adverse events.
 
