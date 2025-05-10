@@ -15,5 +15,5 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Ignore uploads (optional if you don’t want audio files in GitHub)
+# Ignore uploading of audio files in GitHub)
 uploads/
