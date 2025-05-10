@@ -35,7 +35,7 @@ The tool is designed to support early detection and documentation of patient sym
 * **Flask**: Web framework
 * **Jinja2**: Templating engine
 * **OpenAI API**: GPT for insight extraction
-* **Whisper (optional)**: Audio transcription
+* **Whisper**: Audio transcription
 * **HTML/CSS**: UI design
 * **Dotenv**: Secure config management
 
