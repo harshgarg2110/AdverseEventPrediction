@@ -1,0 +1,19 @@
+
+# Ignore Python cache and bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore virtual environments
+env/
+venv/
+
+# Ignore environment variables and secrets
+.env
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore uploads (optional if you don’t want audio files in GitHub)
+uploads/
