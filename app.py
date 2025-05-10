@@ -221,16 +221,6 @@ def result():
                 prescription=prescription
             )
 
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
 
 
 if __name__ == '__main__':
