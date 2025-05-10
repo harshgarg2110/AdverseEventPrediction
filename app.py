@@ -113,6 +113,7 @@
 
 
 
+from dotenv import load_dotenv
 
 from flask import Flask, render_template, request, redirect, url_for
 import os
@@ -126,7 +127,10 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # Initialize Groq client
-client = Groq(api_key="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")
+load_dotenv()
+groq_api_key = os.getenv("GROQ_API_KEY")
+
+client = Groq(api_key=groq_api_key)
 
 @app.route('/')
 def index():
