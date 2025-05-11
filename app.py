@@ -82,19 +82,13 @@ def result():
             return items if items else ["Not found"]
         return ["Not found"]
     
-  
-
-    print(rst)
     
 
     adverse_event = extract("Adverse Events", rst)
     disease = extract("Diseases", rst)
     diagnosis = extract("Diagnoses", rst)
     prescription = extract("Prescriptions", rst)
-    print(adverse_event)
-    print(disease)
-    print(diagnosis)
-    print(repr(rst))
+   
 
     return render_template(
                 "result.html",

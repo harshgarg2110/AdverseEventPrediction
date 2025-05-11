@@ -8,7 +8,6 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <style>
@@ -18,16 +17,17 @@
         box-sizing: border-box;
         font-family: "Roboto", sans-serif;
       }
+
       body {
         background: #f0f4f8;
         color: #2c3e50;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        min-height: 100vh;
         padding: 20px;
+        min-height: 100vh;
       }
+
       .container {
         background: #ffffff;
         padding: 30px;
@@ -37,21 +37,34 @@
         max-width: 1000px;
         text-align: left;
       }
+      .transcript {
+        margin-top: 1rem;
+      }
       h1 {
         font-size: 28px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         color: #1abc9c;
         text-align: center;
       }
+
+      .date-time {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #555;
+        font-size: 0.95em;
+      }
+
       .result-section {
         margin-bottom: 30px;
       }
+
       .result-title {
         font-weight: 700;
         margin-bottom: 10px;
         font-size: 20px;
         color: #34495e;
       }
+
       .result-content {
         background: #ecf0f1;
         padding: 15px;
@@ -59,27 +72,32 @@
         white-space: pre-wrap;
         word-wrap: break-word;
       }
+
       .insights-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 20px;
       }
+
       .insight-box {
         background: #ecf0f1;
         padding: 15px;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       }
+
       .insight-title {
         font-weight: bold;
         color: #2980b9;
         margin-bottom: 10px;
         font-size: 16px;
       }
+
       ul {
         list-style-type: disc;
         padding-left: 20px;
       }
+
       li {
         margin-bottom: 6px;
       }
@@ -114,14 +132,11 @@
       }
     </style>
   </head>
-  <body>
-    <div class="container">
-      <h1>Medical Analysis Results</h1>
 
-      <div class="result-section">
-        <div class="result-title">Transcription</div>
-        <div class="result-content">{{ transcription }}</div>
-      </div>
+  <body>
+    <div class="container" id="pdf-content">
+      <h1>Medical Analysis Results</h1>
+      <div class="date-time" id="date-time"></div>
 
       <div class="result-section">
         <div class="result-title">Predicted Medical Insights</div>
@@ -167,23 +182,27 @@
 
     <div class="button-row">
       <a href="/" class="button">Analyze Another Audio</a>
-      <a class="button" onclick="downloadResultAsPDF()"> Download as PDF </a>
+      <button class="button" onclick="downloadResultAsPDF()">
+        Download as PDF
+      </button>
+    </div>
+
+    <div class="container transcript">
+      <div class="result-section">
+        <div class="result-title">Transcription</div>
+        <div class="result-content">{{ transcription }}</div>
+      </div>
     </div>
 
     <script>
+      // Set date/time
+      const now = new Date();
+      const dateTimeStr = `Generated on: ${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+      document.getElementById("date-time").textContent = dateTimeStr;
+
+      // Download function
       function downloadResultAsPDF() {
-        const element = document.querySelector(".container");
-
-        // Clone the element so we don't affect the actual page
-        const clonedElement = element.cloneNode(true);
-
-        // Create a hidden container for the cloned element
-        const printContainer = document.createElement("div");
-        printContainer.style.position = "fixed";
-        printContainer.style.top = "-9999px";
-        printContainer.appendChild(clonedElement);
-        document.body.appendChild(printContainer);
-
+        const element = document.getElementById("pdf-content");
         const opt = {
           margin: 0.5,
           filename: "medical_result.pdf",
@@ -192,14 +211,7 @@
           jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
         };
 
-        html2pdf()
-          .set(opt)
-          .from(clonedElement)
-          .save()
-          .then(() => {
-            // Clean up the hidden container
-            document.body.removeChild(printContainer);
-          });
+        html2pdf().set(opt).from(element).save();
       }
     </script>
   </body>
