@@ -8,6 +8,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
     <style>
       * {
         margin: 0;
@@ -80,20 +83,30 @@
       li {
         margin-bottom: 6px;
       }
-      a.button {
-        display: inline-block;
+
+      .button-row {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
         margin-top: 20px;
+      }
+
+      .button-row .button {
         background-color: #1abc9c;
         color: white;
         padding: 10px 20px;
         border-radius: 6px;
-        text-decoration: none;
         font-weight: bold;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
         transition: background-color 0.3s ease;
       }
-      a.button:hover {
+
+      .button-row .button:hover {
         background-color: #16a085;
       }
+
       @media (max-width: 600px) {
         .container {
           padding: 20px;
@@ -150,8 +163,44 @@
           </div>
         </div>
       </div>
-
-      <a href="/" class="button">Analyze Another Audio</a>
     </div>
+
+    <div class="button-row">
+      <a href="/" class="button">Analyze Another Audio</a>
+      <a class="button" onclick="downloadResultAsPDF()"> Download as PDF </a>
+    </div>
+
+    <script>
+      function downloadResultAsPDF() {
+        const element = document.querySelector(".container");
+
+        // Clone the element so we don't affect the actual page
+        const clonedElement = element.cloneNode(true);
+
+        // Create a hidden container for the cloned element
+        const printContainer = document.createElement("div");
+        printContainer.style.position = "fixed";
+        printContainer.style.top = "-9999px";
+        printContainer.appendChild(clonedElement);
+        document.body.appendChild(printContainer);
+
+        const opt = {
+          margin: 0.5,
+          filename: "medical_result.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+        };
+
+        html2pdf()
+          .set(opt)
+          .from(clonedElement)
+          .save()
+          .then(() => {
+            // Clean up the hidden container
+            document.body.removeChild(printContainer);
+          });
+      }
+    </script>
   </body>
 </html>
