@@ -3,6 +3,35 @@
 This application analyzes audio-based medical conversations between patients and healthcare professionals. Using powerful AI models, it transcribes conversations, extracts critical medical insights, and predicts possible adverse events.
 
 The tool is designed to support early detection and documentation of patient symptoms, diagnoses, medications, and associated side effects.
+## Submission Details
+
+### 1. Team Details
+- **Team Name:** BINGO  
+- **Project Title:** Adverse Medical Event Prediction
+
+### 2. GitHub Repository
+Our complete source code, relevant assets, and documentation are organized and available at the following GitHub repository:  
+🔗 [GitHub Repository](https://github.com/harshgarg2110/AdverseEventPrediction)
+
+### 3. Deployed Application
+A fully functional prototype of the application is deployed and accessible at:  
+🔗 [Live Demo](https://adverseeventprediction.onrender.com)
+
+### 4. Documentation
+We have prepared comprehensive documentation to accompany our submission:
+
+- **Software Requirements Specification (SRS):**  
+  📄 [View SRS](https://abes365-my.sharepoint.com/:f:/g/personal/rishabh_22b1541039_abes_ac_in/EoqsgoiTsLlKvNkR-lOJ-tUBUSSSOtWxnskKf6LLE9jEYA?e=yjh5Ua)
+
+- **Testing Report:**  
+  📄 [View Testing Report](https://abes365-my.sharepoint.com/:f:/g/personal/rishabh_22b1541039_abes_ac_in/EhDToDJkJn5MnoqpKXGASoQBE8KXGvNbQVr09apFZJ-VuA?e=9U5BQV)
+
+- **Sample Video:**  
+  🎥 [View Video](https://abes365-my.sharepoint.com/:v:/g/personal/kishan_22b1541029_abes_ac_in/EcpU_BrN7t9NtxuumsKaROoB97C_-gulNfdr5rYQLqG-1g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Ak6Zxx)
+
+---
+
+We have ensured that our submission strictly adheres to the hackathon guidelines. The code is clean, modular, and well-documented. Our solution addresses a critical healthcare challenge by leveraging technology to enable early detection and prevention of adverse events, ultimately enhancing patient outcomes.
 
 ---
 
