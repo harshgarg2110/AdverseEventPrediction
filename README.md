@@ -26,6 +26,9 @@ We have prepared comprehensive documentation to accompany our submission:
 - **Testing Report:**  
   📄 [View Testing Report](https://abes365-my.sharepoint.com/:f:/g/personal/rishabh_22b1541039_abes_ac_in/EhDToDJkJn5MnoqpKXGASoQBE8KXGvNbQVr09apFZJ-VuA?e=9U5BQV)
 
+- **Figma Design:**  
+  🎨 [View Design](https://www.figma.com/design/n3GxO8G05x4vU7AN4hh0Yr/Untitled?node-id=0-1&p=f&t=7V7CigEwTtsXJ0c1-0)
+
 - **Sample Video:**  
   🎥 [View Video](https://abes365-my.sharepoint.com/:v:/g/personal/kishan_22b1541029_abes_ac_in/EcpU_BrN7t9NtxuumsKaROoB97C_-gulNfdr5rYQLqG-1g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Ak6Zxx)
 
